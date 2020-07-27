@@ -1,0 +1,12 @@
+{% extends 'layouts/main.twig' %}
+
+{% block title %}
+    {{ good.good_name }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ good.good_name }}</h1>
+    <p>
+        {{ good.good_description }}
+    </p>
+{% endblock %}
