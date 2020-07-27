@@ -1,0 +1,15 @@
+{% extends 'layouts/admin.twig' %}
+
+{% block title %}
+    Добавление товара
+{% endblock %}
+
+{% block content %}
+    <h1>Добавление товара</h1>
+    <form action="/good/add?id={{ good.id }}" method="post">
+        <input type="text" name="name" placeholder="name" value="{{ good.good_name }}">
+        <input type="text" name="price" placeholder="price" value="{{ good.good_price }}">
+        <input type="text" name="info" placeholder="description" value="{{ good.good_description }}">
+        <input type="submit">
+    </form>
+{% endblock %}

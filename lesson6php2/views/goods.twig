@@ -1,0 +1,20 @@
+{% extends 'layouts/main.twig' %}
+
+{% block title %}
+    Каталог
+{% endblock %}
+
+{% block content %}
+{#    {{ '2020-05-07'|date('d-m-Y') }}#}
+    <h1>Товары</h1>
+    {% for good in goods %}
+
+        <p>
+            <a href="/good/one?id={{ good.id }}">
+                {{ good.good_name }}
+            </a>
+        </p>
+    {% else %}
+        Нет товаров
+    {% endfor %}
+{% endblock %}
