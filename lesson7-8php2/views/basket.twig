@@ -1,0 +1,17 @@
+{% extends 'layouts/main.twig' %}
+
+{% block title %}
+    Корзина
+{% endblock %}
+
+{% block content %}
+    <h1>Корзина</h1>
+    {% for good in paginator.getItems() %}
+        <p>
+            {{ good.name }}
+            {{ good.price }}
+        </p>
+    {% else %}
+        Нет товаров
+    {% endfor %}
+{% endblock %}

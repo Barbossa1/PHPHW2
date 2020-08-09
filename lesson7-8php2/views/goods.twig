@@ -1,0 +1,22 @@
+{% extends 'layouts/main.twig' %}
+
+{% block title %}
+    Каталог
+{% endblock %}
+
+{% block content %}
+    <h1>Товары</h1>
+    {% for good in paginator.getItems() %}
+        <p>
+            <a href="/good/one?id={{ good.id }}">
+                {{ good.name }}
+            </a>
+        </p>
+    {% else %}
+        Нет товаров
+    {% endfor %}
+
+    {%  for key, url in paginator.getUrls()  %}
+        <a href="{{url}}">{{ key }}</a>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layouts/main.twig' %}
+
+{% block title %}
+    {{ good.name }}
+{% endblock %}
+
+{% block content %}
+    {{ good.picture }}
+    <h1>{{ good.name }}</h1>
+    <p>
+        {{ good.info }}
+    </p>
+    <a href="/basket/add?id={{ good.id }}">В корзину</a>
+{% endblock %}
