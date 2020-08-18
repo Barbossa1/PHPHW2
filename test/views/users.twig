@@ -1,0 +1,22 @@
+{% extends 'layouts/main.twig' %}
+
+{% block title %}
+    Пользователи
+{% endblock %}
+
+{% block content %}
+    <h1>Пользователи</h1>
+    {%  for user in paginator.getItems()  %}
+        <p>
+            <a href="/user/one?id={{user.id}}">
+                {{user.name}}
+            </a><br>
+        </p>
+        <hr>
+    {% endfor %}
+
+    {%  for key, url in paginator.getUrls()  %}
+        <a href="{{url}}">{{ key }}</a>
+    {% endfor %}
+
+{% endblock %}
